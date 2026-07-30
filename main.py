@@ -7,10 +7,10 @@
 # 3. If step 2 is true, pick a random letter from letter templates and replace the [NAME] with the person's actual name from birthdays.csv
 
 # 4. Send the letter generated in step 3 to that person's email address.
-
+import os
 import pandas, datetime, random, smtplib
-EMAIL= "rohitnbhilare@gmail.com"
-PASSWORD = "hmtc merw eaaw nkyi"
+EMAIL= os.environ.get("MY_EMAIL")
+PASSWORD = os.environ.get("MY_PASSWORD")
 
 def send_mail(name, email):
     letter_lists =["./letter_templates/letter_1.txt", "./letter_templates/letter_2.txt", "./letter_templates/letter_3.txt"]
